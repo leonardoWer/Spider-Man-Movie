@@ -17,9 +17,9 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
         { number: 3, title: "Название для точки 3", description: "Контент для точки 3" },
     ];
 
-    let rotation = 0; // Текущий угол поворота колеса в градусах
     const rotationStep = 72;
     const scrollSensitivity = 0.125;
+    let rotation = -currentActivePointIndex * rotationStep; // Текущий угол поворота колеса в градусах
     let isWheelActive = false;
     let scrollingDirection = 0; // 0: none, 1: down, -1: up
     let isNextPointScrolled = false;
@@ -68,14 +68,16 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
                     }
                 }
 
-            } else if (scrollingDirection === -1) { // Scrolling up
-                isNextPointScrolled = newRotation <= currentActivePointIndex * rotationStep - rotationStep;
-                newRotation = Math.max(newRotation, currentActivePointIndex * rotationStep - rotationStep); // Limit to previous point
             }
+            // else if (scrollingDirection === -1) { // Scrolling up
+            //     isNextPointScrolled = newRotation <= currentActivePointIndex * rotationStep - rotationStep;
+            //     newRotation = Math.max(newRotation, currentActivePointIndex * rotationStep - rotationStep); // Limit to previous point
+            // }
 
             rotation = newRotation; // Запоминаем новый поворот колеса
 
             wheelElement.style.transform = `rotate(${rotation}deg)`;
+            console.log("Степень прокрутки колеса", wheelElement.style.transform)
 
         } else {
             isWheelActive = false;
@@ -114,6 +116,8 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
         // Колесо
         wheelElement = document.createElement('div');
         wheelElement.classList.add(styles.wheel);
+        wheelElement.style.transform = `rotate(-${currentActivePointIndex * rotationStep}deg)`;
+        console.log("Степень прокрутки колеса", scrollWheelNumber, wheelElement.style.transform);
 
         // Create the circle wrapper
         const circleListWrapper = document.createElement('div');
@@ -124,7 +128,8 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
         wheelItemsList.classList.add(styles.wheelItemsList);
         wheelItemsList.setAttribute('role', 'list');
 
-        for (let i = currentActivePointIndex; i < numberOfDots; i++) {
+        // Добавляем точки
+        for (let i = 0; i < numberOfDots; i++) {
             const wheelItem = document.createElement('div');
             wheelItem.classList.add(styles.wheelItem);
 
