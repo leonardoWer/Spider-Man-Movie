@@ -1,14 +1,14 @@
 @font-face {
     font-family: "octa-bold";
-    src: url("../../../public/fonts/okta-bold.woff2");
+    src: url("/fonts/okta-bold.woff2");
 }
 
 @font-face {
     font-family: "octa-medium";
-    src: url("spider-man-movies/public/fonts/okta-medium.woff2");
+    src: url("/fonts/okta-medium.woff2");
 }
 
 @font-face {
     font-family: "octa-regular";
-    src: url("../../../public/fonts/okta-normal.woff2");
+    src: url("/fonts/okta-normal.woff2");
 }

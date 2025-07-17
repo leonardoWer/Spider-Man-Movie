@@ -21,8 +21,64 @@
 
 .container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    padding: var(--section-padding);
 }
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 60vw;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.container-title {
+    font-family: var(--okta-bold);
+    font-size: 6rem;
+    color: var(--vinous-black);
+    line-height: 7rem;
+}
+.container-description {
+    font-family: var(--okta-regular);
+    font-size: 1.8rem;
+    color: var(--vinous-black);
+    line-height: 2.2rem;
+    width: 90%;
+}
+
+/* Хедер */
+
+.header-container {
+    background: url('/img/s-m-bg-3.jpeg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.header-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 4%;
+    bottom: 42%;
+}
+.header-title {
+    color: var(--light-text);
+    font-size: 5rem;
+    font-family: var(--okta-bold);
+}
+.header-description {
+    color: var(--red);
+    font-size: 3rem;
+    font-family: var(--okta-medium);
+}
+
+/* Колесо */
 .scroll-wheel-container {
     background-color: var(--vinous-black);
     overflow: hidden;
@@ -30,6 +86,23 @@
     justify-items: center;
     justify-content: center;
     padding: 38vh 0 0 0;
+    height: 103vh;
+}
+
+/* все 3 части чп */
+.s-m-all-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.change-bg-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 10vh 4vw;
 }
 
 

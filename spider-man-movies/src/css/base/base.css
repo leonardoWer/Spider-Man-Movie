@@ -2,7 +2,7 @@
 body {
     font-family: var(--okta-regular);
     color: var(--light-text);
-    background-color: var(--vinous-dark);
+    background-color: var(--light-bg);
     overflow-x: hidden;
 }
 
@@ -13,6 +13,6 @@ html {
 
 /* Выделение мыши */
 ::selection {
-    background: var(--vinous);
-    color: var(--red);
+    background: var(--red);
+    color: var(--light-text);
 }

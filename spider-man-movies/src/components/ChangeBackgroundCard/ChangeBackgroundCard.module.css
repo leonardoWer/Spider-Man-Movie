@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    border-radius: var(--two-border-radius);
+    color: var(--light-text);
+    background-color: var(--vinous-black);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: background 2s ease-in-out, background-color 2s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для затемнения фона (если нужно, чтобы текст был читаем на ярких картинках) */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+    border-radius: var(--two-border-radius);
+}
+
+.title {
+    font-size: 2rem;
+    font-family: var(--okta-bold);
+    z-index: 2;
+}
+.description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 1rem;
+    z-index: 2; /* Текст над псевдоэлементом */
+}
+
+/* Стили при наведении */
+.card:hover {
+    background-color: transparent; /* Сбрасываем цвет, чтобы появилась картинка */
+}
+.card:hover::before {
+    opacity: 0; /* Скрываем затемнение при наведении */
+}

@@ -1,11 +1,16 @@
 :root {
     /* Цвета */
     --red: #e01e37;
+    --red-1: #db0c0c;
+    --red-2: #bd0c0c;
+    --red-3: #a90c0c;
+    --red-4: #8d0b0b;
     --vinous: #641220;
     --vinous-dark: #1a0202;
-    --vinous-black: #140202;
+    --vinous-black: #060000;
 
     --light-text: white;
+    --light-bg: #F0F4F8;
 
 
     /* Градиенты */
@@ -21,7 +26,7 @@
     --two-border-radius: 16px;
 
     /*  Отступы  */
-    --section-padding: 10vh 6vw;
+    --section-padding: 10vh 4vw;
     --max-width: 3440px;
 
     /*  Шрифты  */
