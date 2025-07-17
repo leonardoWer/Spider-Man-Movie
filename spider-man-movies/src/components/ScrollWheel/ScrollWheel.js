@@ -87,22 +87,18 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
         // Сбрасываем стили для всех элементов
         for (let i = 0; i < numberOfDots; i++) {
             const wheelItem = wheelItemsList.children[i];
-            const numberContainer = wheelItem.querySelector(`.${styles.wheelItem__numberContainer}`);
             const dot = wheelItem.querySelector(`.${styles.wheelItem__dot}`);
             const descriptionContainer = wheelItem.querySelector(`.${styles.wheelItem__descriptionContainer}`);
 
-            numberContainer.classList.remove(styles.active);
             dot.classList.remove(styles.active);
             descriptionContainer.classList.remove(styles.active); // Hide content by default
         }
 
         // Применяем стили для активного элемента
         const activeItem = wheelItemsList.children[currentActivePointIndex];
-        const activeNumberContainer = activeItem.querySelector(`.${styles.wheelItem__numberContainer}`);
         const activeDot = activeItem.querySelector(`.${styles.wheelItem__dot}`);
         const activeDescriptionContainer = activeItem.querySelector(`.${styles.wheelItem__descriptionContainer}`);
 
-        activeNumberContainer.classList.add(styles.active);
         activeDot.classList.add(styles.active);
         activeDescriptionContainer.classList.add(styles.active); // Show active content
     }
