@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             backgroundColor: "var(--red-2)",
             title: 'Новый Человек-паук',
-            description: '2 фильма с Эндрю Гарфилдом',
+            description: 'Два фильма с Эндрю Гарфилдом',
             backgroundImageUrl: '/img/s-m-2.png'
         },
         {
             backgroundColor: "var(--red-1)",
             title: 'Человек-паук',
-            description: 'Трилогия от Марвел с Томом Холландом',
+            description: 'Трилогия с Томом Холландом',
             backgroundImageUrl: '/img/s-m-3.png'
         }
     ];
