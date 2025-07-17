@@ -1,11 +1,14 @@
 import styles from './ChangeBackgroundCard.module.css';
 
-export function createChangeBgCard({ title, description, backgroundImageUrl, label, cardClass }) {
+export function createChangeBgCard({ backgroundColor, title, description, backgroundImageUrl}) {
     // Создаем основной контейнер карточки
     const cardElement = document.createElement('div');
     cardElement.className = styles.card;
 
     // Если указан URL изображения, устанавливаем его как фоновое
+    if (backgroundColor) {
+        cardElement.style.backgroundColor = backgroundColor;
+    }
     if (backgroundImageUrl) {
         cardElement.addEventListener('mouseover', () => {
             cardElement.style.backgroundImage = `url('${backgroundImageUrl}')`;
