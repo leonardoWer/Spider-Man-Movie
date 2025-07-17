@@ -14,7 +14,7 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    transition: background 2s ease-in-out, background-color 2s ease-in-out;
+    transition: background 2s ease-in-out, background-color 2s ease-in-out, transform 0.4s linear;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 

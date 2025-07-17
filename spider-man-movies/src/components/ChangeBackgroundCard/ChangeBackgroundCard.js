@@ -1,4 +1,5 @@
 import styles from './ChangeBackgroundCard.module.css';
+import {initMouseTarget} from "s/components/MouseTargetCard/MouseTargetCard.js";
 
 export function createChangeBgCard({ backgroundColor, title, description, backgroundImageUrl}) {
     // Создаем основной контейнер карточки
@@ -31,6 +32,9 @@ export function createChangeBgCard({ backgroundColor, title, description, backgr
     // Добавляем заголовок и описание в карточку
     cardElement.appendChild(titleElement);
     cardElement.appendChild(descriptionElement);
+
+    // Добавляем таргет от мыши
+    initMouseTarget(cardElement);
 
     return cardElement;
 }
