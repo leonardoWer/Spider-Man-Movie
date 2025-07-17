@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const threeSMContainer = document.getElementById('s-m-all-container');
 
-    // Пример данных для карточек
-    const cardData = [
+    // Карточки
+    const threeSpiderSectionCardsData = [
         {
             backgroundColor: "var(--red-3)",
             title: 'Человек-паук',
@@ -27,11 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    cardData.forEach(data => {
+    threeSpiderSectionCardsData.forEach(data => {
         const card = createChangeBgCard(data);
         threeSMContainer.appendChild(card);
     });
 
+    // Колёса
     const wheelParentContainers = document.querySelectorAll('.scroll-wheel-container');
     wheelParentContainers.forEach(parentContainer => {
         const wheelNumber = parentContainer.dataset.number;

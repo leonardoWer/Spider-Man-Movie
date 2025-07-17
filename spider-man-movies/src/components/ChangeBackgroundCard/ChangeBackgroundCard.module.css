@@ -8,13 +8,12 @@
     padding: 2rem;
     border-radius: var(--two-border-radius);
     color: var(--light-text);
-    background-color: var(--vinous-black);
     background-size: cover;
     background-position: center;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    transition: background 2s ease-in-out, background-color 2s ease-in-out, transform 0.4s linear;
+    transition: transform 0.4s linear;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -22,15 +21,35 @@
 .card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
     opacity: 1;
     transition: opacity 0.8s ease;
     border-radius: var(--two-border-radius);
+}
+
+.bgContainer {
+    background-color: var(--vinous-black);
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.4s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10vh;
+}
+.card:hover {
+    .bgContainer {
+        opacity: 0;
+    }
+}
+
+.titleImg {
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+    transform: rotateY(-30deg);
 }
 
 .title {
@@ -45,17 +64,8 @@
     z-index: 2; /* Текст над псевдоэлементом */
 }
 
-/* Стили при наведении */
-.card:hover {
-    background-color: transparent; /* Сбрасываем цвет, чтобы появилась картинка */
-}
-.card:hover::before {
-    opacity: 0; /* Скрываем затемнение при наведении */
-}
-
 @media (min-width: 1220px) {
     .card {
         width: calc((100% / 3) - 4rem);
-
     }
 }
