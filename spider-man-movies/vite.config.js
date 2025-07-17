@@ -13,7 +13,8 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            '@': resolve(__dirname, './src'), // Создаем псевдоним для удобного импорта
+            's': resolve(__dirname, './src'),
+            'p': resolve(__dirname, './public'),
         },
     },
 });

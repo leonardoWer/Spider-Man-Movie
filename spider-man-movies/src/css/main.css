@@ -3,6 +3,24 @@
 @import url(utils/variables.css);
 @import url(utils/fonts.css);
 @import url(utils/animations.css);
-@import url(components/buttons.css);
-@import url(layout/header.css);
-@import url(layout/footer.css);
+
+
+.top-menu {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+    z-index: 100;
+}
+
+.top-menu__left {
+    width: 20%;
+}
+
+
+.logo-text {
+    color: var(--light-text);
+    font-family: var(--okta-medium);
+    font-size: 1.4rem;
+}

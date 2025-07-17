@@ -1,5 +1,10 @@
 /* Общие параметры */
-body {}
+body {
+    font-family: var(--okta-regular);
+    color: var(--light-text);
+    background-color: var(--vinous-dark);
+    overflow-x: hidden;
+}
 
 html {
     scroll-behavior: smooth;
@@ -7,4 +12,7 @@ html {
 
 
 /* Выделение мыши */
-::selection {}
+::selection {
+    background: var(--vinous);
+    color: var(--red);
+}
