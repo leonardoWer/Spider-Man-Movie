@@ -1,8 +1,3 @@
-.header-container {
-    width: 100%;
-    height: 100vh;
-}
-
 .title-text {
     font-family: var(--okta-bold);
     font-size: 8rem;
@@ -72,8 +67,9 @@
 }
 
 /* Хедер */
-
 .header-container {
+    width: 100%;
+    height: 100vh;
     background: url('/img/s-m-bg-3.jpeg') no-repeat center center;
     background-size: cover;
     position: relative;
@@ -97,6 +93,29 @@
     color: var(--red);
     font-size: 3rem;
     font-family: var(--okta-medium);
+}
+
+.header-scroll-mouse-container {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+.icon {
+    width: 2rem;
+    height: inherit;
+    object-fit: contain;
+    color: var(--light-text);
+}
+.scroll-mouse-text {
+    font-size: 1.2rem;
+    font-family: var(--okta-regular);
+    margin-left: 0.6rem;
 }
 
 /* Колесо */
