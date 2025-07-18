@@ -18,27 +18,49 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
     ];
 
     const rotationStep = 72;
-    const scrollSensitivity = 0.125;
     let rotation = -currentActivePointIndex * rotationStep; // Текущий угол поворота колеса в градусах
-    let isWheelActive = false;
+
+    const scrollSensitivity = 0.0689;
     let scrollingDirection = 0; // 0: none, 1: down, -1: up
+
+    let isWheelActive = false;
     let isNextPointScrolled = false;
 
-    // Function to check if wheel is in viewport
-    function isElementInViewport(el) {
-        if (!el) return false;
+    // Обсервер для состояния прокрутки
+    const parentContainerViewThreshold = 0.8;
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                isWheelActive = entry.isIntersecting && entry.intersectionRatio >= parentContainerViewThreshold;
+            });
+        },
+        {
+            root: null,
+            threshold: parentContainerViewThreshold,
+        }
+    );
 
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top <= 0
-        );
+    // Начинаем наблюдение за элементом сразу после инициализации Observer
+    if (parentContainer) {
+        observer.observe(parentContainer);
     }
 
     // Function to handle scroll event
     function handleScroll(event) {
-        if (isElementInViewport(parentContainer) && !isNextPointScrolled) {
-            isWheelActive = true;
-            event.preventDefault(); // Prevent page scroll
+        if (isWheelActive && !isNextPointScrolled) {
+            // Скроллим как надо
+            const parentRect = parentContainer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            let targetScrollTop = parentRect.bottom + window.pageYOffset - windowHeight;
+
+            window.scrollTo({
+                top: targetScrollTop,
+                behavior: 'smooth',
+            });
+
+            // Prevent page scroll
+            event.preventDefault();
 
             let delta = event.deltaY; // Вращение колеса мыши
             scrollingDirection = delta > 0 ? 1 : -1; // 1: down, -1: up
@@ -79,9 +101,6 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
             wheelElement.style.transform = `rotate(${rotation}deg)`;
             console.log("Степень прокрутки колеса", wheelElement.style.transform)
 
-        } else {
-            isWheelActive = false;
-            // isNextPointScrolled = false;
         }
     }
 
