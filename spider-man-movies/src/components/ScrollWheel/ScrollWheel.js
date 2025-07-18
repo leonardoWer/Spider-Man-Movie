@@ -25,9 +25,10 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
 
     let isWheelActive = false;
     let isNextPointScrolled = false;
+    let needToBlockScroll = false;
 
     // Обсервер для состояния прокрутки
-    const parentContainerViewThreshold = 0.8;
+    const parentContainerViewThreshold = 0.6;
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
@@ -47,7 +48,13 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
 
     // Function to handle scroll event
     function handleScroll(event) {
-        if (isWheelActive && !isNextPointScrolled) {
+        if (isNextPointScrolled) {
+            setTimeout(() => {needToBlockScroll = false}, 1600)
+        }
+        if (isWheelActive && needToBlockScroll) {
+            event.preventDefault();
+        }
+        if (isWheelActive && !isNextPointScrolled)  {
             // Скроллим как надо
             const parentRect = parentContainer.getBoundingClientRect();
             const windowHeight = window.innerHeight;
@@ -67,40 +74,42 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
 
             // Потенциальный новый угол поворота, который получится, если применить текущую прокрутку.
             let newRotation = rotation - delta * scrollSensitivity;
-            console.log("Потенциальный новый угол поворота", newRotation);
+
+            let nextActivePointCorner;
 
             if (scrollingDirection === 1) { // Scrolling down
                 // угол, соответствующий следующей точке
-                const nextActivePointCorner = -(currentActivePointIndex * rotationStep + rotationStep);
-                console.log("nextActivePointCorner", nextActivePointCorner)
+                nextActivePointCorner = -(currentActivePointIndex * rotationStep + rotationStep);
 
                 // Если при прокрутке к следующей точке угол поворота дальше чем точка, обновляем флаг
                 isNextPointScrolled = newRotation <= nextActivePointCorner;
-                console.log("Достигнута ли сл точка:", isNextPointScrolled)
-                // Если следующая точка достигается
-                if (isNextPointScrolled) {
-                    // Ограничивает newRotation так, чтобы он не мог быть больше угла следующей
-                    newRotation = nextActivePointCorner;
 
-                    // Обновляем текущий ActivePointIndex
-                    let newIndex = Math.abs(Math.round(rotation / rotationStep) % numberOfDots);
-                    if (newIndex !== currentActivePointIndex) {
-                        currentActivePointIndex = newIndex;
-                        updateUI();
-                    }
-                }
+            } else if (scrollingDirection === -1) { // Scrolling up
+                // Угол, соответствующий предыдущей точке
+                nextActivePointCorner = -(currentActivePointIndex * rotationStep - rotationStep);
 
+                // Если при прокрутке к предыдущей точке угол поворота дальше чем точка, обновляем флаг
+                isNextPointScrolled = newRotation >= nextActivePointCorner;
             }
-            // else if (scrollingDirection === -1) { // Scrolling up
-            //     isNextPointScrolled = newRotation <= currentActivePointIndex * rotationStep - rotationStep;
-            //     newRotation = Math.max(newRotation, currentActivePointIndex * rotationStep - rotationStep); // Limit to previous point
-            // }
 
-            rotation = newRotation; // Запоминаем новый поворот колеса
+            // Если следующая точка достигается
+            if (isNextPointScrolled) {
+                needToBlockScroll = true;
+                // Ограничивает newRotation так, чтобы он не мог быть больше угла следующей
+                newRotation = nextActivePointCorner;
+
+                // Обновляем текущий ActivePointIndex
+                let newIndex = Math.abs(Math.round(rotation / rotationStep) % numberOfDots);
+                if (newIndex !== currentActivePointIndex) {
+                    currentActivePointIndex = newIndex;
+                    updateUI();
+                }
+            }
+
+            // Новый поворот колеса
+            rotation = newRotation;
 
             wheelElement.style.transform = `rotate(${rotation}deg)`;
-            console.log("Степень прокрутки колеса", wheelElement.style.transform)
-
         }
     }
 
