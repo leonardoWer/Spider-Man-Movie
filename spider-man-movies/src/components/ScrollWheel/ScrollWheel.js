@@ -97,6 +97,9 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
                 needToBlockScroll = true;
                 // Ограничивает newRotation так, чтобы он не мог быть больше угла следующей
                 newRotation = nextActivePointCorner;
+                rotation = newRotation;
+
+                wheelElement.style.transform = `rotate(${rotation}deg)`;
 
                 // Обновляем текущий ActivePointIndex
                 let newIndex = Math.abs(Math.round(rotation / rotationStep) % numberOfDots);
@@ -109,7 +112,6 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
             // Новый поворот колеса
             rotation = newRotation;
 
-            wheelElement.style.transform = `rotate(${rotation}deg)`;
         }
     }
 
