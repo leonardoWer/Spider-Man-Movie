@@ -12,7 +12,6 @@
     --light-text: white;
     --light-bg: #F0F4F8;
 
-
     /* Градиенты */
     --red-gradient: linear-gradient(-120deg, #D62121, #C72C2C, #3a1111);
 
@@ -33,4 +32,7 @@
     --okta-bold: "octa-bold", Helvetica, Arial, sans-serif;
     --okta-medium: "octa-medium", Helvetica, Arial, sans-serif;
     --okta-regular: "octa-regular", Helvetica, Arial, sans-serif;
+
+    /*  Анимации  */
+    --cubic-bezier: cubic-bezier(0.45, 0.05, 0.55, 0.85)
 }

@@ -1,5 +1,6 @@
 import { ScrollWheel } from "s/components/ScrollWheel/ScrollWheel.js";
 import { createChangeBgCard } from "s/components/ChangeBackgroundCard/ChangeBackgroundCard.js";
+import { createNavigationTabsMenu } from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -37,6 +38,14 @@ document.addEventListener("DOMContentLoaded", function() {
     wheelParentContainers.forEach(parentContainer => {
         const wheelNumber = parentContainer.dataset.number;
         ScrollWheel(parentContainer, wheelNumber);
+    })
+
+    // Табы навигации
+    const navigationTabsMenuItems = ['Фильмы', 'Люди', 'Интересные факты'];
+
+    const navigationTabsMenuContainers = document.querySelectorAll('.navigation-tabs-menu-container');
+    navigationTabsMenuContainers.forEach(navigationTabsMenuItem => {
+        createNavigationTabsMenu(navigationTabsMenuItem, navigationTabsMenuItems);
     })
 
 });
