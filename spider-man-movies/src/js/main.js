@@ -1,6 +1,7 @@
 import { ScrollWheel } from "s/components/ScrollWheel/ScrollWheel.js";
 import { createChangeBgCard } from "s/components/ChangeBackgroundCard/ChangeBackgroundCard.js";
 import { createNavigationTabsMenu } from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
+import { createFilmsContent } from "s/components/NavigationTabsContent/NavigationTabsContent.js";
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -41,11 +42,71 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     // Табы навигации
-    const navigationTabsMenuItems = ['Фильмы', 'Люди', 'Интересные факты'];
+    const filmsSM1data = [
+        {
+            titleImg: "/img/s-m-1.png",
+            backgroundImg: "var(--r-g-bg)",
+            title: "Человек-Паук 2002",
+            description: "Первая часть легендарной классики о дружелюбном соседе"
+        },
+        {
+            titleImg: "/img/s-m-1.png",
+            backgroundImg: "var(--r-g-bg)",
+            title: "Человек-Паук 2 2004",
+            description: "Вторая часть легендарной классики о дружелюбном соседе"
+        },
+        {
+            titleImg: "/img/s-m-1.png",
+            backgroundImg: "var(--r-g-bg)",
+            title: "Человек-Паук 3 Враг в отражении",
+            description: "Третья и последняя часть легендарной классики о дружелюбном соседе"
+        }
+    ]
+    const navigationTabsMenuItemsSM1 = [
+        {
+            title: 'Фильмы',
+            content: createFilmsContent(filmsSM1data)
+        },
+        {
+            title: 'Люди',
+            content: null
+        },
+        {
+            title: 'Интересные факты',
+            content: null
+        }
+    ]
+
+    const navigationTabsData = [
+        {
+            menuContainer: null,
+            contentContainer: null,
+            tabsData: navigationTabsMenuItemsSM1
+        },
+        // {
+        //     menuContainer: null,
+        //     contentContainer: null,
+        //     tabsData: null
+        // },
+        // {
+        //     menuContainer: null,
+        //     contentContainer: null,
+        //     tabsData: null
+        // }
+    ]
 
     const navigationTabsMenuContainers = document.querySelectorAll('.navigation-tabs-menu-container');
-    navigationTabsMenuContainers.forEach(navigationTabsMenuItem => {
-        createNavigationTabsMenu(navigationTabsMenuItem, navigationTabsMenuItems);
+    const navigationTabsContentContainers = document.querySelectorAll('.navigation-tabs-content-container');
+
+    navigationTabsMenuContainers.forEach((navigationTabsMenuContainer, index) => {
+        navigationTabsData[index].menuContainer = navigationTabsMenuContainer;
+    })
+    navigationTabsContentContainers.forEach((navigationTabsContentContainer, index) => {
+        navigationTabsData[index].contentContainer = navigationTabsContentContainer;
+    })
+
+    navigationTabsData.forEach(data => {
+        createNavigationTabsMenu(data.menuContainer, data.contentContainer, data.tabsData);
     })
 
 });

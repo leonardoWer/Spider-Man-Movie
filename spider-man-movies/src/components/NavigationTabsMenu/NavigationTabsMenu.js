@@ -1,7 +1,7 @@
 import styles from './NavigationTabsMenu.module.css';
 
-export function createNavigationTabsMenu(parentContainer, items) {
-    parentContainer.classList.add(styles.navigation);
+export function createNavigationTabsMenu(navigationTabsMenuContainer, navigationTabsContentContainer, tabsData) {
+    navigationTabsMenuContainer.classList.add(styles.navigation);
 
     const list = document.createElement('ul');
     list.classList.add(styles.navigationList);
@@ -9,10 +9,10 @@ export function createNavigationTabsMenu(parentContainer, items) {
     let activeItemIndex = 0;
     let activeElement = null;
 
-    items.forEach((item, index) => {
+    function createMenuItem(text, index) {
         const listItem = document.createElement('li');
         listItem.classList.add(styles.navigationItem);
-        listItem.textContent = item;
+        listItem.textContent = text;
         listItem.dataset.index = index;
 
         listItem.addEventListener('mouseover', () => {
@@ -35,9 +35,21 @@ export function createNavigationTabsMenu(parentContainer, items) {
             activeElement = listItem;
             listItem.classList.add(styles.active);
         }
+    }
+
+    function createContent(contentElement, index) {
+        if (index !== activeItemIndex) {
+            contentElement.classList.add(styles.hideContent)
+        }
+        navigationTabsContentContainer.appendChild(contentElement);
+    }
+
+    tabsData.forEach((tabData, index) => {
+        createMenuItem(tabData.title, index);
+        tabData.content ? createContent(tabData.content, index) : '';
     });
 
-    parentContainer.appendChild(list);
+    navigationTabsMenuContainer.appendChild(list);
 
     // Create the active element and position it
     const activeElementWrapper = document.createElement('div');
@@ -56,25 +68,32 @@ export function createNavigationTabsMenu(parentContainer, items) {
         hoverElementWrapper.style.left = activeElement.offsetLeft + 'px';
     });
 
-    parentContainer.appendChild(activeElementWrapper);
-    parentContainer.appendChild(hoverElementWrapper);
+    navigationTabsMenuContainer.appendChild(activeElementWrapper);
+    navigationTabsMenuContainer.appendChild(hoverElementWrapper);
 
     function setActive(newIndex) {
         if (newIndex === activeItemIndex) {
             return;
         }
 
-        const oldActive = list.querySelector(`.${styles.navigationItem}.${styles.active}`);
-        oldActive.classList.remove(styles.active);
+        const oldActiveMenuItem = list.querySelector(`.${styles.navigationItem}.${styles.active}`);
+        oldActiveMenuItem.classList.remove(styles.active);
 
-        const newActive = list.querySelector(`.${styles.navigationItem}[data-index="${newIndex}"]`);
-        newActive.classList.add(styles.active);
+        const newActiveMenuItem = list.querySelector(`.${styles.navigationItem}[data-index="${newIndex}"]`);
+        newActiveMenuItem.classList.add(styles.active);
+
+        try {
+            const oldContentElement = navigationTabsContentContainer.children[activeItemIndex];
+            oldContentElement.classList.add(styles.hideContent);
+            const newContentElement = navigationTabsContentContainer.children[newIndex];
+            newContentElement.classList.remove(styles.hideContent);
+        } catch (error) {}
 
         // Move the active element smoothly
-        activeElementWrapper.style.left = newActive.offsetLeft + 'px';
-        activeElementWrapper.style.width = newActive.offsetWidth + 'px';
-        hoverElementWrapper.style.left = newActive.offsetLeft + 'px';
-        hoverElementWrapper.style.width = newActive.offsetWidth + 'px';
+        activeElementWrapper.style.left = newActiveMenuItem.offsetLeft + 'px';
+        activeElementWrapper.style.width = newActiveMenuItem.offsetWidth + 'px';
+        hoverElementWrapper.style.left = newActiveMenuItem.offsetLeft + 'px';
+        hoverElementWrapper.style.width = newActiveMenuItem.offsetWidth + 'px';
 
         activeItemIndex = newIndex;
     }
@@ -93,5 +112,4 @@ export function createNavigationTabsMenu(parentContainer, items) {
         hoverElementWrapper.style.left = active.offsetLeft + 'px';
         hoverElementWrapper.style.width = active.offsetWidth + 'px';
     }
-
 }

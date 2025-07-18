@@ -44,6 +44,10 @@
     background: var(--red-gradient);
 }
 
+.hideContent {
+    display: none;
+}
+
 @media (min-width: 1200px) {
     .navigationItem {
         font-size: 1.2rem;
