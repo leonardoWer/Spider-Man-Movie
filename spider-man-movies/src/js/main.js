@@ -154,7 +154,7 @@ function getTabsMenuData() {
         {
             title: "Человек-паук: Возвращение домой",
             description: "Фильм про паука №3",
-            titleImg: "/img/s-m-1-spider.png",
+            titleImg: "/img/s-m-3-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--light-red-gradient)",
         },
@@ -162,14 +162,14 @@ function getTabsMenuData() {
             title: "Человек-паук: Вдали от дома",
             description: "Второй фильм с Томом Холландом",
             titleImg: "/img/s-m-3-spider.png",
-            titleBackgroundColor: "var(--red-blue-gradient)",
+            titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--light-red-gradient)",
         },
         {
             title: "Человек-паук: Нет пути домой",
             description: "Третий фильм с Томом Холландом и мультивселенной",
             titleImg: "/img/s-m-3-spider.png",
-            titleBackgroundColor: "var(--red-blue-gradient)",
+            titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--light-red-gradient)",
         },
     ];
