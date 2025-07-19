@@ -10,22 +10,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // Карточки
     const threeSpiderSectionCardsData = [
         {
-            backgroundColor: "var(--red-3)",
             title: 'Человек-паук',
             description: 'Трилогия с Тоби Магуайером',
-            backgroundImageUrl: '/img/s-m-1.png'
+            titleBackgroundColor: "var(--red-3)",
+            hoverBackgroundImg: '/img/s-m-1.png'
         },
         {
-            backgroundColor: "var(--red-2)",
             title: 'Новый Человек-паук',
             description: 'Два фильма с Эндрю Гарфилдом',
-            backgroundImageUrl: '/img/s-m-2.png'
+            titleBackgroundColor: "var(--red-2)",
+            hoverBackgroundImg: '/img/s-m-2.png'
         },
         {
-            backgroundColor: "var(--red-1)",
             title: 'Человек-паук',
             description: 'Трилогия с Томом Холландом',
-            backgroundImageUrl: '/img/s-m-3.png'
+            titleBackgroundColor: "var(--red-1)",
+            hoverBackgroundImg: '/img/s-m-3.png'
         }
     ];
 
@@ -44,22 +44,26 @@ document.addEventListener("DOMContentLoaded", function() {
     // Табы навигации
     const filmsSM1data = [
         {
-            titleImg: "/img/s-m-1.png",
-            backgroundImg: "var(--r-g-bg)",
             title: "Человек-Паук 2002",
-            description: "Первая часть легендарной классики о дружелюбном соседе"
+            description: "Первая часть легендарной классики о дружелюбном соседе",
+            titleImg: "/img/s-m-1-spider.png",
+            titleBackgroundColor: "var(--vinous-black)",
+            hoverBackground: "var(--red-blue-gradient)",
         },
         {
-            titleImg: "/img/s-m-1.png",
-            backgroundImg: "var(--r-g-bg)",
             title: "Человек-Паук 2 2004",
-            description: "Вторая часть легендарной классики о дружелюбном соседе"
+            description: "Вторая часть легендарной классики о дружелюбном соседе",
+            titleImg: "/img/s-m-1-spider.png",
+            titleBackgroundColor: "var(--vinous-black)",
+            hoverBackground: "var(--red-blue-gradient)",
         },
         {
-            titleImg: "/img/s-m-1.png",
-            backgroundImg: "var(--r-g-bg)",
             title: "Человек-Паук 3 Враг в отражении",
-            description: "Третья и последняя часть легендарной классики о дружелюбном соседе"
+            description: "Третья и последняя часть легендарной классики о дружелюбном соседе",
+            titleImg: "/img/s-m-1-spider.png",
+            titleBackgroundColor: "var(--vinous-black)",
+            hoverBackground: "var(--red-blue-gradient)",
+            needHideTitleImg: true
         }
     ]
     const navigationTabsMenuItemsSM1 = [

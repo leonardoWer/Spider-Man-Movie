@@ -7,11 +7,12 @@ export function createFilmsContent(filmsInfoData) {
 
     filmsInfoData.forEach(item => {
         const card = createChangeBgCard({
-            backgroundColor: 'transparent',
-            titleImg: item.titleImg,
             title: item.title,
             description: item.description,
-            backgroundImageUrl: item.backgroundImg,
+            titleImg: item.titleImg,
+            needHideTitleImg: item.needHideTitleImg,
+            titleBackgroundColor: item.titleBackgroundColor,
+            hoverBackground: item.hoverBackground,
         });
 
         filmsContainer.appendChild(card);
