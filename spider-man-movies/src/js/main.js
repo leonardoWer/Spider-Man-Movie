@@ -133,6 +133,11 @@ function getTabsMenuData() {
             title: "Гвен Стейси",
             img: "/img/s-m-2.png",
         },
+        {
+            name: "Марк Уэбб",
+            title: "Режиссёр",
+            img: "/img/s-m-2.png",
+        },
     ];
 
     const navigationTabsMenuItems_SM2 = [
