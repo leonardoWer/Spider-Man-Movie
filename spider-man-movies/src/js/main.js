@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
             titleImg: "/img/s-m-1-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--red-blue-gradient)",
-            needHideTitleImg: true
         }
     ]
     const navigationTabsMenuItemsSM1 = [

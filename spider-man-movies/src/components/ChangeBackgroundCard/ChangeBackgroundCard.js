@@ -29,6 +29,7 @@ export function createChangeBgCard({ title, description, titleBackgroundColor, t
     // Если указан URL изображения, устанавливаем его как фоновое
     if (hoverBackgroundImg) {
         cardElement.style.backgroundImage = `url('${hoverBackgroundImg}')`;
+        cardElement.classList.add(styles.bgBlur);
     } else if (hoverBackground) {
         cardElement.style.background = hoverBackground;
     }
