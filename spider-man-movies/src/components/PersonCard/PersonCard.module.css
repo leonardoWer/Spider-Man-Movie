@@ -1,0 +1,41 @@
+.personCard {
+    min-height: 70vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.personCard__image {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.personCard__info {
+    padding: 2rem 0;
+}
+
+.personCard__name {
+    font-size: 2rem;
+    font-family: var(--okta-bold);
+    color: var(--vinous-black);
+}
+
+.personCard__title {
+    font-size: 1.8rem;
+    font-family: var(--okta-medium);
+    color: var(--vinous-black);
+    margin-top: 0.7rem;
+}
+
+@media (max-width: 780px) {
+    .personCard {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1920px) {
+    .personCard {
+        width: 33%;
+    }
+}

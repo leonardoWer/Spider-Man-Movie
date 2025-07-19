@@ -14,9 +14,10 @@
 
     /* Градиенты */
     --red-gradient: linear-gradient(-120deg, #D62121, #C72C2C, #3a1111);
-    --light-red-gradient: linear-gradient(to right, #e53935, #e35d5b);
+
     --red-blue-gradient: linear-gradient(to right top, #780206, #061161);
-    --dark-red-gradient: linear-gradient(to right, #a73737, #7a2828);
+    --dark-red-gradient: linear-gradient(to bottom, #a73737, #7a2828);
+    --light-red-gradient: linear-gradient(to left bottom, #e53935, #e35d5b);
 
     /* Тени */
     --top-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.3);
