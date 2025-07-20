@@ -74,14 +74,16 @@
     width: 80vw;
     height: 12vh;
     padding-left: 15vw;
+    overflow: hidden;
 }
 
 .h-c-c__list {
-    width: 100%;
+    width: max-content;
     height: 100%;
     display: flex;
     gap: 4rem;
-    flex-direction: row;
+    transition: transform 2s ease-in-out;
+    animation: scrollList 20s linear infinite;
 }
 .h-c-c-list__item {
     color: var(--vinous-black);
@@ -91,6 +93,15 @@
 }
 .copyright-icon {
     margin: 0 0.2rem 0.2rem 0;
+}
+
+@keyframes scrollList {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(300%); /* Сдвигаем влево на ширину всех элементов */
+    }
 }
 
 /* Колесо */

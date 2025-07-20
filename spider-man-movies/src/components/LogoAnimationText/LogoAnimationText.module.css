@@ -59,3 +59,18 @@
     font-size: 4rem;
     line-height: 5.5rem;
 }
+
+@media (min-width: 1920px) {
+    .text, .letter-o {
+        font-size: 35rem;
+        margin: -4rem 0 0 -0.5rem;
+    }
+    .spider-man-letter {
+        position: relative;
+        display: inline-block;
+        font-family: var(--okta-medium);
+        color: var(--light-text);
+        font-size: 5rem;
+        line-height: 6.5rem;
+    }
+}
