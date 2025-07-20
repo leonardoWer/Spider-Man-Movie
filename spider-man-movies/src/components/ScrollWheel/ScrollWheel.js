@@ -11,10 +11,26 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
     scrollWheelNumber - 1 < 0 ? currentActivePointIndex = 0 : currentActivePointIndex = scrollWheelNumber - 1;
 
     const pointData = [
-        { number: 0, title: "Название для точки 0", description: "Контент для точки 0" },
-        { number: 1, title: "Название для точки 1", description: "Контент для точки 1" },
-        { number: 2, title: "Название для точки 2", description: "Контент для точки 2" },
-        { number: 3, title: "Название для точки 3", description: "Контент для точки 3" },
+        {
+            number: 0,
+            title: "Вселенная Человека-Паука",
+            description: "Уникальные интерпретации легендарного героя"
+        },
+        {
+            number: 1,
+            title: "Тоби Магуайр: Классика",
+            description: "Питер Паркер в исполнении Тоби Магуайра задал тон для всех последующих экранизаций. Трилогия, повлиявшая на целое поколение"
+        },
+        {
+            number: 2,
+            title: "Эндрю Гарфилд: Самый настоящий из всех",
+            description: "Переосмысление истории Питера Паркера, с акцентом на школьные годы и личную драму. Дилогия, которая ломает"
+        },
+        {
+            number: 3,
+            title: "Том Холланд: Паук в большом мире",
+            description: "Том Холланд - дружелюбный сосед эпохи Marvel. Молодой и энергичный Питер Паркер, который полетел в космос"
+        },
     ];
 
     const rotationStep = 72;
