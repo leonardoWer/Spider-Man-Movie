@@ -81,12 +81,12 @@ function getTabsMenuData() {
         {
             name: "Тоби Магуайер",
             title: "Питер Паркер",
-            img: "/img/s-m-1.png",
+            img: "/img/persons/tobey.jpg",
         },
         {
-            name: "Мэри Джейн",
-            title: "Кирстен Данст",
-            img: "/img/s-m-1.png",
+            name: "Кирстен Данст",
+            title: "Мэри Джейн",
+            img: "/img/persons/kirsten.jpg",
         }
     ];
     const navigationTabsMenuItems_SM1 = [
@@ -126,17 +126,17 @@ function getTabsMenuData() {
         {
             name: "Эндрю Гарфилд",
             title: "Питер Паркер",
-            img: "/img/s-m-2.png",
+            img: "/img/persons/andrew.jpg",
         },
         {
             name: "Эмма Стоун",
             title: "Гвен Стейси",
-            img: "/img/s-m-2.png",
+            img: "/img/persons/emma.jpg",
         },
         {
             name: "Марк Уэбб",
             title: "Режиссёр",
-            img: "/img/s-m-2.png",
+            img: "/img/persons/mark-uebb.png",
         },
     ];
 
@@ -183,17 +183,17 @@ function getTabsMenuData() {
         {
             name: "Том Холланд",
             title: "Питер Паркер",
-            img: "/img/tom-holland.png",
+            img: "/img/persons/tom-holland.jpg",
         },
         {
-            name: "Зендая",
+            name: "Зендея",
             title: "ЭмДжей",
-            img: "/img/zendaya.png",
+            img: "/img/persons/zendaya.jpg",
         },
         {
             name: "Джон Уоттс",
             title: "Режиссёр",
-            img: "/img/jon-watts.png",
+            img: "/img/persons/jon-watts.jpg",
         },
     ];
 
