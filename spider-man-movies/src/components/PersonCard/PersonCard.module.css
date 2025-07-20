@@ -1,12 +1,12 @@
 .personCard {
     width: 100%;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .personCard__imgContainer {
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 .personCard__image {
     width: 100%;

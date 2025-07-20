@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getTabsMenuData() {
     // Списки
+    // ВАЖНО: При добавлении новых полей, не забыть добавить изменения в NavigationTabsContent
     const filmsData_SM1 = [
         {
             title: "Человек-Паук 2002",

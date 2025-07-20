@@ -32,6 +32,7 @@ export function createPersonsContent(actorsInfoData) {
             name: item.name,
             title: item.title,
             img: item.img,
+            personLink: item.personLink,
         });
 
         actorsContainer.appendChild(card);

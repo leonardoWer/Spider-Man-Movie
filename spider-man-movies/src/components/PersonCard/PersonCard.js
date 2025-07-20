@@ -13,15 +13,18 @@ export function PersonCard({ name, title, img, personLink }) {
     image.alt = name;
     image.classList.add(styles.personCard__image);
 
-    const blur = document.createElement('div');
-    blur.classList.add(styles.blur);
-
-    const circleLink = CircleLink({href: personLink});
-    circleLink.classList.add(styles.link);
-
     imgContainer.appendChild(image);
-    imgContainer.appendChild(blur);
-    imgContainer.appendChild(circleLink);
+
+    if (personLink) {
+        const blur = document.createElement('div');
+        blur.classList.add(styles.blur);
+
+        const circleLink = CircleLink({href: personLink});
+        circleLink.classList.add(styles.link);
+
+        imgContainer.appendChild(blur);
+        imgContainer.appendChild(circleLink);
+    }
 
     cardDiv.appendChild(imgContainer);
 
