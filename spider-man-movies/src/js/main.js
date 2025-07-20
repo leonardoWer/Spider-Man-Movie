@@ -2,9 +2,15 @@ import {ScrollWheel} from "s/components/ScrollWheel/ScrollWheel.js";
 import {createChangeBgCard} from "s/components/ChangeBackgroundCard/ChangeBackgroundCard.js";
 import {createNavigationTabsMenu} from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
 import {createFilmsContent, createPersonsContent} from "s/components/NavigationTabsContent/NavigationTabsContent.js";
-import {PersonCard} from "s/components/PersonCard/PersonCard.js";
+import {LogoAnimationText} from "s/components/LogoAnimationText/LogoAnimationText.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Хедер
+    const headerLogoContainer = document.querySelector('.header-text-container');
+    if (headerLogoContainer) {
+        headerLogoContainer.appendChild(LogoAnimationText());
+    }
 
     const threeSMContainer = document.getElementById('s-m-all-container');
 
@@ -43,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     // Табы навигации
-
     const navigationTabsData = getTabsMenuData();
     navigationTabsData.forEach(data => {
         createNavigationTabsMenu(data.menuContainer, data.contentContainer, data.tabsData);

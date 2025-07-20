@@ -2,52 +2,95 @@
 .header-container {
     width: 100%;
     height: 100vh;
-    background: url('/img/s-m-bg-3.jpeg') no-repeat center center;
-    background-size: cover;
+    background-color: var(--vinous-black);
     position: relative;
+    overflow: hidden;
 }
 
-.header-text-container {
+.header-img-container {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+}
+.header-img {
+    height: 98%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+
+.header-text-container {
     position: absolute;
-    left: 4%;
-    bottom: 42%;
+    left: 0;
+    top: 0;
+    width: 80vw;
 }
-.header-title {
-    color: var(--light-text);
-    font-size: 5rem;
-    font-family: var(--okta-bold);
-}
-.header-description {
-    color: var(--red);
-    font-size: 3rem;
-    font-family: var(--okta-medium);
-}
+
 
 .header-scroll-mouse-container {
     position: absolute;
-    bottom: 4rem;
-    left: 4rem;
+    bottom: 2rem;
+    left: 2rem;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
-    justify-content: center;
     align-items: center;
     pointer-events: none;
+    gap: 0.6rem;
+    height: 32px;
 }
 .icon {
     width: 2rem;
-    height: inherit;
+    height: 32px;
     object-fit: contain;
     color: var(--light-text);
 }
 .scroll-mouse-text {
-    font-size: 1.2rem;
-    font-family: var(--okta-regular);
-    margin-left: 0.6rem;
+    font-size: 2.2rem;
+    font-family: var(--okta-bold);
+    margin-bottom: calc(2.2rem - 24px);
+}
+
+.h-c-c__bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 200px;
+    background-color: var(--light-bg);
+    width: 80vw;
+    height: 30vh;
+    transform: translateY(50%) translateX(10vw);
+}
+
+.h-c-c__content-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    width: 80vw;
+    height: 12vh;
+    padding-left: 15vw;
+}
+
+.h-c-c__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 4rem;
+    flex-direction: row;
+}
+.h-c-c-list__item {
+    color: var(--vinous-black);
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+}
+.copyright-icon {
+    margin: 0 0.2rem 0.2rem 0;
 }
 
 /* Колесо */

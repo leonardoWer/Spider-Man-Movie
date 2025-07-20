@@ -11,20 +11,23 @@
     position: fixed;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 1rem 2rem;
     z-index: 100;
 }
 
 .top-menu__left {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu__right {
     width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-
-.logo-text {
-    color: var(--light-text);
-    font-family: var(--okta-medium);
-    font-size: 1.4rem;
-}
 
 
 /* Общие части */
