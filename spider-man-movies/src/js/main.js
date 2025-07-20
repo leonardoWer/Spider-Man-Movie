@@ -71,7 +71,7 @@ function initAnimations() {
                 gsap.to(letters, {
                     yPercent: 100,  // Сдвигаем буквы вниз на 100% высоты
                     stagger: 0.09,   // Задержка между буквами
-                    duration: 0.3,  // Длительность анимации
+                    duration: 0.3,
                     ease: "power2.in" // Функция easing (ускорение в начале)
                 });
             });
@@ -79,8 +79,8 @@ function initAnimations() {
             hoverText.addEventListener('mouseleave', () => {
                 gsap.to(letters, {
                     yPercent: 0,    // Возвращаем буквы на исходную позицию
-                    stagger: 0.05,   // Задержка между буквами (можно сделать другой)
-                    duration: 0.3,  // Длительность анимации
+                    stagger: 0.05,   // Задержка между буквами
+                    duration: 0.3,
                     ease: "power2.out" // Функция easing (замедление в конце)
                 });
             });
