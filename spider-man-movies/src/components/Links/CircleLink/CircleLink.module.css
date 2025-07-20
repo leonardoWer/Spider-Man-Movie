@@ -1,0 +1,30 @@
+.circleLink {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: var(--vinous-black);
+    overflow: hidden;
+}
+
+.arrow {
+    transition: transform 2s ease-in-out;
+    animation: moveUpRight 4s var(--cubic-bezier) infinite;
+}
+
+@keyframes moveUpRight {
+    0% {
+        transform: translateX(-50px) translateY(50px);
+    }
+    10% {
+        transform: translateX(0) translateY(0);
+    }
+    90% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(50px) translateY(-50px);
+    }
+}
