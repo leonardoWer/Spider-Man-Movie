@@ -5,6 +5,7 @@
 @import url(utils/animations.css);
 
 
+/* Верхнее меню */
 .top-menu {
     width: 100%;
     position: fixed;
@@ -25,3 +26,75 @@
     font-size: 1.4rem;
 }
 
+
+/* Общие части */
+
+.bg {
+    width: 100%;
+    height: 100%;
+
+}
+.r-g-bg {
+    background: var(--red-gradient);
+}
+.bg-red-1 {
+    background-color: var(--red-1);
+}
+.bg-red-2 {
+    background-color: var(--red-2);
+}
+.bg-red-3 {
+    background-color: var(--red-3);
+}
+.bg-red-4 {
+    background-color: var(--red-4);
+}
+.bg-red-1, .bg-red-2, .bg-red-3, .bg-red-4 {
+    position: relative;
+}
+.bg-blur {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    min-height: 104vh;
+    padding: var(--section-padding);
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 60vw;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.container-title {
+    font-family: var(--okta-bold);
+    color: var(--vinous-black);
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.container-description {
+    font-family: var(--okta-regular);
+    font-size: 1.8rem;
+    color: var(--vinous-black);
+    line-height: 2.2rem;
+    width: 90%;
+}
+
+
+/* Футер */
+.footer-bg {
+    width: 100vw;
+    height: 100vh;
+    background: url("../../../public/img/s-m-mv-bg.jpg") no-repeat center;
+    background-size: cover;
+}

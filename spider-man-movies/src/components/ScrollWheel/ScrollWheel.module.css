@@ -109,3 +109,22 @@
     font-size: 1.4rem;
     line-height: 1.8rem;
 }
+
+
+@media (max-width: 600px) {
+    .wheelContainer {
+        height: 50vh;
+        width: 200vw;
+    }
+    .wheelItem__line {
+        height: 6rem;
+    }
+    .wheelItem__title {
+        font-size: 2rem;
+    }
+    .wheelItem__description {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+}

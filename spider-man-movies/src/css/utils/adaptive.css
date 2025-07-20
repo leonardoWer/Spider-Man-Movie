@@ -1,0 +1,30 @@
+@media (min-width: 500px) {
+    .container-title {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+}
+
+
+@media (min-width: 900px) {
+    .container-title {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .container-title {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+}
+
+
+@media (min-width: 1900px) {
+    .container-title {
+        font-size: 6rem;
+        line-height: 7rem;
+    }
+}
