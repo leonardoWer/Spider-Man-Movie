@@ -10,7 +10,7 @@
 }
 .personCard__image {
     width: 100%;
-    height: 40vh;
+    height: 60vh;
     object-fit: cover;
     object-position: top;
     border-radius: var(--border-radius);
@@ -58,18 +58,20 @@
     margin-top: 0.7rem;
 }
 
+@media (min-width: 500px) {
+    .personCard {
+        width: 60%;
+    }
+}
 @media (min-width: 780px) {
     .personCard {
-        width: 50%;
-    }
-    .personCard__image {
-        height: 50vh;
+        width: calc(50% - 2rem);
     }
 }
 
-@media (min-width: 1900px) {
+@media (min-width: 1200px) {
     .personCard {
-        width: 30%;
+        width: calc(30% - 2rem);
     }
     .personCard__image {
         height: 62vh;
