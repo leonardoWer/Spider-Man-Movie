@@ -1,13 +1,29 @@
 import styles from './PersonCard.module.css';
+import {CircleLink} from "s/components/Links/CircleLink/CircleLink.js";
 
-export function PersonCard({ name, title, img }) {
+export function PersonCard({ name, title, img, personLink }) {
     const cardDiv = document.createElement('div');
     cardDiv.classList.add(styles.personCard);
+
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add(styles.personCard__imgContainer);
 
     const image = document.createElement('img');
     image.src = img;
     image.alt = name;
     image.classList.add(styles.personCard__image);
+
+    const blur = document.createElement('div');
+    blur.classList.add(styles.blur);
+
+    const circleLink = CircleLink({href: personLink});
+    circleLink.classList.add(styles.link);
+
+    imgContainer.appendChild(image);
+    imgContainer.appendChild(blur);
+    imgContainer.appendChild(circleLink);
+
+    cardDiv.appendChild(imgContainer);
 
     const infoDiv = document.createElement('div');
     infoDiv.classList.add(styles.personCard__info);
@@ -23,7 +39,6 @@ export function PersonCard({ name, title, img }) {
     infoDiv.appendChild(heading);
     infoDiv.appendChild(paragraph);
 
-    cardDiv.appendChild(image);
     cardDiv.appendChild(infoDiv);
 
     return cardDiv;

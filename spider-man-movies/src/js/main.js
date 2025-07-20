@@ -1,10 +1,10 @@
-import { ScrollWheel } from "s/components/ScrollWheel/ScrollWheel.js";
-import { createChangeBgCard } from "s/components/ChangeBackgroundCard/ChangeBackgroundCard.js";
-import { createNavigationTabsMenu } from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
-import { createFilmsContent, createPersonsContent } from "s/components/NavigationTabsContent/NavigationTabsContent.js";
-import { PersonCard } from "s/components/PersonCard/PersonCard.js";
+import {ScrollWheel} from "s/components/ScrollWheel/ScrollWheel.js";
+import {createChangeBgCard} from "s/components/ChangeBackgroundCard/ChangeBackgroundCard.js";
+import {createNavigationTabsMenu} from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
+import {createFilmsContent, createPersonsContent} from "s/components/NavigationTabsContent/NavigationTabsContent.js";
+import {PersonCard} from "s/components/PersonCard/PersonCard.js";
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const threeSMContainer = document.getElementById('s-m-all-container');
 
@@ -82,6 +82,7 @@ function getTabsMenuData() {
             name: "Тоби Магуайер",
             title: "Питер Паркер",
             img: "/img/persons/tobey.jpg",
+            personLink: "https://tobey.com/",
         },
         {
             name: "Кирстен Данст",
@@ -223,7 +224,7 @@ function getTabsMenuData() {
     const navigationTabsContentContainers = document.querySelectorAll('.navigation-tabs-content-container');
 
     // Build the data structure
-    return Array.from({ length: navigationTabsMenuContainers.length }, (_, index) => ({
+    return Array.from({length: navigationTabsMenuContainers.length}, (_, index) => ({
         menuContainer: navigationTabsMenuContainers[index] || null,
         contentContainer: navigationTabsContentContainers[index] || null,
         tabsData: allTabData[index] || null
