@@ -17,9 +17,14 @@ export function LogoAnimationText() {
     imageContainer.id = 'image-container';
 
     const images = [
-        '/img/s-m-1.png',
-        '/img/s-m-2.png',
-        '/img/s-m-3.png',
+        '/img/movies/s-m-1-1.png',
+        '/img/movies/sm-1-2.jpg',
+        '/img/movies/sm-1-3.jpg',
+        '/img/movies/sm-2-1.jpg',
+        '/img/movies/s-m-2-2.jpeg',
+        '/img/movies/s-m-3-1.png',
+        '/img/movies/s-m-3-2.png',
+        '/img/movies/sm-3-3.jpg',
     ];
 
     images.forEach(src => {
@@ -42,7 +47,7 @@ export function LogoAnimationText() {
     contentContainerElement.appendChild(kinoContainerElement);
 
     // Анимация
-    const imageSwitchInterval = 500;
+    const imageSwitchInterval = 300;
     const animationDuration = 1;
 
     let currentImageIndex = 0;
