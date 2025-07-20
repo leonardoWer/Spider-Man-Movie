@@ -28,8 +28,6 @@
     justify-content: flex-end;
 }
 
-
-
 /* Общие части */
 
 .bg {
@@ -93,6 +91,16 @@
     width: 90%;
 }
 
+/* Анимации */
+.hover__down-text {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.hover__down-text span {
+    display: inline-block;
+    position: relative;
+}
 
 /* Футер */
 .footer-bg {

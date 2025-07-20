@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import {ScrollWheel} from "s/components/ScrollWheel/ScrollWheel.js";
 import {createChangeBgCard} from "s/components/ChangeBackgroundCard/ChangeBackgroundCard.js";
 import {createNavigationTabsMenu} from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
@@ -5,16 +6,15 @@ import {createFilmsContent, createPersonsContent} from "s/components/NavigationT
 import {LogoAnimationText} from "s/components/LogoAnimationText/LogoAnimationText.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-
     // Хедер
     const headerLogoContainer = document.querySelector('.header-text-container');
     if (headerLogoContainer) {
         headerLogoContainer.appendChild(LogoAnimationText());
     }
 
+    // Карточки
     const threeSMContainer = document.getElementById('s-m-all-container');
 
-    // Карточки
     const threeSpiderSectionCardsData = [
         {
             title: 'Человек-паук',
@@ -54,7 +54,41 @@ document.addEventListener("DOMContentLoaded", function () {
         createNavigationTabsMenu(data.menuContainer, data.contentContainer, data.tabsData);
     })
 
+    // Анимации
+    initAnimations();
+
 });
+
+
+function initAnimations() {
+
+    function initHoverText() {
+        const hoverTexts = document.querySelectorAll('.hover__down-text');
+        hoverTexts.forEach((hoverText) => {
+            const letters = hoverText.querySelectorAll('span');
+
+            hoverText.addEventListener('mouseenter', () => {
+                gsap.to(letters, {
+                    yPercent: 100,  // Сдвигаем буквы вниз на 100% высоты
+                    stagger: 0.09,   // Задержка между буквами
+                    duration: 0.3,  // Длительность анимации
+                    ease: "power2.in" // Функция easing (ускорение в начале)
+                });
+            });
+
+            hoverText.addEventListener('mouseleave', () => {
+                gsap.to(letters, {
+                    yPercent: 0,    // Возвращаем буквы на исходную позицию
+                    stagger: 0.05,   // Задержка между буквами (можно сделать другой)
+                    duration: 0.3,  // Длительность анимации
+                    ease: "power2.out" // Функция easing (замедление в конце)
+                });
+            });
+        })
+    }
+
+    initHoverText();
+}
 
 
 function getTabsMenuData() {
