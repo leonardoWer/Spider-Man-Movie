@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import {TopMenu} from "s/components/TopMenu/TopMenu.js";
 import {ScrollWheel} from "s/components/ScrollWheel/ScrollWheel.js";
 import {createChangeBgCard} from "s/components/ChangeBackgroundCard/ChangeBackgroundCard.js";
 import {createNavigationTabsMenu} from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
@@ -6,6 +7,10 @@ import {createFilmsContent, createPersonsContent} from "s/components/NavigationT
 import {LogoAnimationText} from "s/components/LogoAnimationText/LogoAnimationText.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Верхнее меню
+    const topMenuContainer = document.getElementById("top-menu-container");
+    topMenuContainer.appendChild(TopMenu());
+
     // Хедер
     const headerLogoContainer = document.querySelector('.header-text-container');
     if (headerLogoContainer) {
