@@ -41,7 +41,7 @@ export function TopMenu() {
                           <a href="#s-m-3-section" class="${styles['menu-link']}" data-scroll-to="s-m-3-section">Spider-Man 3</a>
                       </li>
                       <li class="${styles['m-m-i-p-l__item']}">
-                          <a href="/about" class="${styles['menu-link']}">about</a>
+                          <a href="#footer-section" data-scroll-to="footer-section" class="${styles['menu-link']}">about</a>
                       </li>
                   </ul>
 
