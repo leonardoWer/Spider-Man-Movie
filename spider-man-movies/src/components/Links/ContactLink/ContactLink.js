@@ -2,7 +2,7 @@ import styles from './ContactLink.module.css';
 import gsap from 'gsap';
 
 export function createContactLink({ icon, href, hoverText }) {
-    const colors = ['#007bff', '#6610f2', '#dc3545', '#ffc107', '#28a745'];
+    const colors = ['#28a745', '#007bff', '#6610f2', '#ffc107', '#dc3545'];
     const numLines = colors.length;
     let lines = [];
 
@@ -22,19 +22,18 @@ export function createContactLink({ icon, href, hoverText }) {
     linkContainer.appendChild(link);
     linkContainer.appendChild(linesContainer);
 
-    let containerRect = null;  // Store the container's bounding rectangle
+    let containerRect = null;
 
     // Animation Constants
-    const ENTER_DURATION = 0.3;
-    const LEAVE_DURATION = 0.3;
-    const MOVE_DURATION = 0.15;
-    const EASING = "power2.out"; // Common easing function
+    const ENTER_DURATION = 0.4;
+    const LEAVE_DURATION = 0.4;
+    const MOVE_DURATION = 0.7;
+    const EASING = "power2.out";
     const MOVE_EASING = "power1.out";
 
     const INITIAL_OFFSET = 4;
     const MOUSE_SENSITIVITY = 0.1;
     const MOUSE_MULTIPLIER = 3;
-
 
     const handleMouseEnter = (event) => {
         // Очищаем массив линий перед созданием новых
@@ -128,7 +127,7 @@ export function createContactLink({ icon, href, hoverText }) {
     link.href = href;
     link.addEventListener('mouseenter', handleMouseEnter);
     link.addEventListener('mouseleave', handleMouseLeave);
-    link.addEventListener('mousemove', handleMouseMove); // Add mousemove listener
+    link.addEventListener('mousemove', handleMouseMove);
     link.setAttribute('aria-label', hoverText);
     link.innerHTML = icon;
 

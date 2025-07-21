@@ -13,16 +13,15 @@ document.addEventListener("DOMContentLoaded", function () {
     topMenuContainer.appendChild(TopMenu());
 
     // Хедер
-    const logoAnimationText = LogoAnimationText();
     const headerLogoContainer = document.querySelector('.header-text-container');
     if (headerLogoContainer) {
-        headerLogoContainer.appendChild(logoAnimationText);
+        headerLogoContainer.appendChild(LogoAnimationText());
     }
 
     // Футер
     const footerLogoContainer = document.querySelector('.f-c-c__logo-container');
     if (footerLogoContainer) {
-        footerLogoContainer.appendChild(logoAnimationText);
+        footerLogoContainer.appendChild(LogoAnimationText());
     }
 
     const contactsLinkData = [
