@@ -141,7 +141,18 @@ export function LogoAnimationText() {
 
     letterO.style.display = 'none';
     imageContainer.style.display = 'none';
-    startAnimation();
+
+    // Анимация только тогда, когда компонент виден
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startAnimation();
+                observer.unobserve(contentContainerElement); // Останавливаем наблюдение после запуска
+            }
+        });
+    });
+
+    observer.observe(contentContainerElement); // Наблюдаем за contentContainerElement
 
     // Очистка интервала при переходе на другую страницу
     window.addEventListener('beforeunload', () => {
