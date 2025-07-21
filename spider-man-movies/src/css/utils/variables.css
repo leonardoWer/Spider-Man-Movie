@@ -19,6 +19,8 @@
     --dark-red-gradient: linear-gradient(to bottom, #a73737, #7a2828);
     --light-red-gradient: linear-gradient(to left bottom, #e53935, #e35d5b);
 
+    --footer-gradient: linear-gradient(to bottom, #38498e 1%, var(--vinous-black) 40%);
+
     /* Тени */
     --top-box-shadow: 0 -20px 20px -20px rgba(0, 0, 0, 0.3);
     --right-box-shadow: 20px 0 20px -20px rgba(0, 0, 0, 0.2);

@@ -5,6 +5,7 @@ import {createChangeBgCard} from "s/components/ChangeBackgroundCard/ChangeBackgr
 import {createNavigationTabsMenu} from "s/components/NavigationTabsMenu/NavigationTabsMenu.js";
 import {createFilmsContent, createPersonsContent} from "s/components/NavigationTabsContent/NavigationTabsContent.js";
 import {LogoAnimationText} from "s/components/LogoAnimationText/LogoAnimationText.js";
+import {createContactLink} from "s/components/Links/ContactLink/ContactLink.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     // Верхнее меню
@@ -12,9 +13,29 @@ document.addEventListener("DOMContentLoaded", function () {
     topMenuContainer.appendChild(TopMenu());
 
     // Хедер
+    const logoAnimationText = LogoAnimationText();
     const headerLogoContainer = document.querySelector('.header-text-container');
     if (headerLogoContainer) {
-        headerLogoContainer.appendChild(LogoAnimationText());
+        headerLogoContainer.appendChild(logoAnimationText);
+    }
+
+    // Футер
+    const footerLogoContainer = document.querySelector('.f-c-c__logo-container');
+    if (footerLogoContainer) {
+        footerLogoContainer.appendChild(logoAnimationText);
+    }
+
+    const contactsLinkData = [
+        { icon: 'tg', href: 'https://telegram.org/', hoverText: 'Visit my Telegram' },
+        { icon: 'vk', href: 'https://vk.com/', hoverText: 'Visit my VK' },
+        { icon: 'git', href: 'https://github.com/', hoverText: 'Visit my GitHub' },
+        { icon: 'p', href: '#', hoverText: 'Visit my portfolio' },
+    ]
+    const footerContactsContainer = document.querySelector('.f-c-c__contacts-container');
+    if (footerContactsContainer) {
+        contactsLinkData.forEach(contactData => {
+            footerContactsContainer.appendChild(createContactLink(contactData));
+        })
     }
 
     // Карточки
