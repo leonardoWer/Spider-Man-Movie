@@ -1,0 +1,62 @@
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.kinoTextContainer {
+    position: relative;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.text, .letter-o {
+    font-size: clamp(4rem, 21.27vw, 35rem);
+    font-family: var(--okta-bold);
+    color: var(--light-text);
+    margin-top: calc(clamp(4rem, 21.27vw, 35rem) / -6);
+    margin-left: 0.5rem;
+}
+.text {
+    white-space: nowrap;
+    position: relative;
+}
+.letter-o {
+    display: none;
+}
+
+.image-container {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 95%;
+    overflow: hidden;
+}
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+}
+
+
+/* Текст с ЧП */
+.spider-man-container {
+    display: flex;
+    overflow: hidden;
+    margin-left: 1.8rem;
+    margin-top: calc(clamp(0.8rem, 0.152rem + 3.24vw, 4rem) / -4);
+}
+
+.spider-man-letter {
+    position: relative;
+    display: inline-block;
+    font-family: var(--okta-medium);
+    color: var(--light-text);
+    font-size: clamp(0.8rem, 0.152rem + 3.24vw, 4rem);
+    line-height: calc(clamp(0.8rem, 0.152rem + 3.24vw, 4rem)*1.4);
+}

@@ -1,0 +1,18 @@
+/* Общие параметры */
+body {
+    font-family: var(--okta-regular);
+    color: var(--light-text);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Выделение мыши */
+::selection {
+    background: var(--red);
+    color: var(--light-text);
+}
