@@ -14,10 +14,11 @@
 }
 
 .text, .letter-o {
-    font-size: 23rem;
+    font-size: clamp(4rem, 21.27vw, 35rem);
     font-family: var(--okta-bold);
     color: var(--light-text);
-    margin: -4rem 0 0 -0.5rem;
+    margin-top: calc(clamp(4rem, 21.27vw, 35rem) / -6);
+    margin-left: 0.5rem;
 }
 .text {
     white-space: nowrap;
@@ -47,8 +48,8 @@
 .spider-man-container {
     display: flex;
     overflow: hidden;
-    margin-left: 0.5rem;
-    margin-top: -1rem;
+    margin-left: 1.8rem;
+    margin-top: calc(clamp(0.8rem, 0.152rem + 3.24vw, 4rem) / -4);
 }
 
 .spider-man-letter {
@@ -56,21 +57,6 @@
     display: inline-block;
     font-family: var(--okta-medium);
     color: var(--light-text);
-    font-size: 4rem;
-    line-height: 5.5rem;
-}
-
-@media (min-width: 1920px) {
-    .text, .letter-o {
-        font-size: 35rem;
-        margin: -4rem 0 0 -0.5rem;
-    }
-    .spider-man-letter {
-        position: relative;
-        display: inline-block;
-        font-family: var(--okta-medium);
-        color: var(--light-text);
-        font-size: 5rem;
-        line-height: 6.5rem;
-    }
+    font-size: clamp(0.8rem, 0.152rem + 3.24vw, 4rem);
+    line-height: calc(clamp(0.8rem, 0.152rem + 3.24vw, 4rem)*1.4);
 }
