@@ -1,2 +1,20 @@
 /.idea/
 
+# deploy
+/dist
+
+# Игнорировать файлы конфигурации и секреты
+config.properties
+application.properties
+*.log
+*.bak
+*.swp
+*.swo
+.*.swp
+.*.swo
+
+# Игнорировать временные файлы и папки
+tmp/
+temp/
+*.tmp
+*.cache
