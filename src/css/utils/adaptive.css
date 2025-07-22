@@ -3,6 +3,9 @@
         font-size: 3rem;
         line-height: 4rem;
     }
+    .header-img-container {
+        height: 70%;
+    }
 }
 
 
@@ -10,6 +13,9 @@
     .container-title {
         font-size: 4rem;
         line-height: 5rem;
+    }
+    .header-img-container {
+        height: 80%;
     }
 }
 
@@ -19,6 +25,12 @@
         font-size: 5rem;
         line-height: 6rem;
     }
+    .header-img-container {
+        height: 90%;
+    }
+    .header-scroll-mouse-container, .header-copypast-container {
+        display: block;
+    }
 }
 
 
@@ -26,5 +38,8 @@
     .container-title {
         font-size: 6rem;
         line-height: 7rem;
+    }
+    .header-img-container {
+        height: 100%;
     }
 }
