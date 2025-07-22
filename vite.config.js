@@ -9,5 +9,5 @@ export default defineConfig({
             'p': resolve(__dirname, './public'),
         },
     },
-    base: '/Spider-Man-Movie',
+    base: '/Spider-Man-Movie/',
 });
