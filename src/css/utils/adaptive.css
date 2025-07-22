@@ -1,0 +1,45 @@
+@media (min-width: 500px) {
+    .container-title {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+    .header-img-container {
+        height: 70%;
+    }
+}
+
+
+@media (min-width: 900px) {
+    .container-title {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+    .header-img-container {
+        height: 80%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .container-title {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+    .header-img-container {
+        height: 90%;
+    }
+    .header-scroll-mouse-container, .header-copypast-container {
+        display: block;
+    }
+}
+
+
+@media (min-width: 1900px) {
+    .container-title {
+        font-size: 6rem;
+        line-height: 7rem;
+    }
+    .header-img-container {
+        height: 100%;
+    }
+}

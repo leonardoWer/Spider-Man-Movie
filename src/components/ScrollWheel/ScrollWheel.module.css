@@ -1,0 +1,130 @@
+.wheelContainer {
+    height: 60vh;
+    width: 90vw;
+    margin-top: auto;
+}
+.wheelHeight {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+.wheel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform .6s cubic-bezier(0.45, 0.05, 0.55, 0.85), opacity .4s;
+}
+
+.wheelItemsListWrapper {
+    width: 100%;
+    height: 100%;
+}
+.wheelItemsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.wheelItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+}
+.wheelItem__numberContainer {
+    margin-top: -4.5em;
+    position: relative;
+    max-width: 100%;
+}
+.wheelItem__number {
+    border: 1px solid var(--light-text);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    padding: 12px 16px;
+    font-size: 1.1rem;
+}
+.wheelItem__dot {
+    border-radius: 100%;
+    background-color: var(--light-text);
+    width: 1rem;
+    height: 1rem;
+    margin: 1rem auto;
+    transition: background-color 0.8s ease-in-out;
+}
+.wheelItem__dot.active {
+    background-color: var(--red);
+}
+
+.wheelItem__descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: auto;
+    transition: opacity 0.8s ease-in-out;
+    transition-delay: 0.5s;
+    opacity: 0;
+}
+.wheelItem__descriptionContainer.active {
+    opacity: 1;
+}
+
+.wheelItem__line {
+    height: 12rem;
+    width: 1px;
+    background: var(--light-text);
+    margin-top: -0.5rem;
+}
+.wheelItem__textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1.2rem;
+}
+
+.wheelItem__title {
+    font-family: var(--okta-medium);
+    font-size: 2.8rem;
+}
+.wheelItem__description {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+
+
+@media (max-width: 600px) {
+    .wheelContainer {
+        height: 50vh;
+        width: 200vw;
+    }
+    .wheelItem__line {
+        height: 6rem;
+    }
+    .wheelItem__title {
+        font-size: 2rem;
+    }
+    .wheelItem__description {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+
+}
