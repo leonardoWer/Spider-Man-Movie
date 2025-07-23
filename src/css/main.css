@@ -2,14 +2,12 @@
 @import url(base/base.css);
 @import url(utils/variables.css);
 @import url(utils/fonts.css);
-@import url(utils/animations.css);
 
 /* Общие части */
 
 .bg {
     width: 100%;
     height: 100%;
-
 }
 .r-g-bg {
     background: var(--red-gradient);
@@ -71,6 +69,7 @@
     color: var(--vinous-black);
     line-height: 2.2rem;
     width: 90%;
+    text-wrap: balance;
 }
 
 /* Анимации */

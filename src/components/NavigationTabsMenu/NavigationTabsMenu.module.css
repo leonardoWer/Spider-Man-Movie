@@ -1,4 +1,6 @@
 .navigation {
+    width: fit-content;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +8,6 @@
     position: relative;
     overflow: hidden;
     margin: 2.2rem auto;
-    width: fit-content;
 }
 
 .navigationList {
@@ -23,6 +24,7 @@
     transition: background-color 0.8s ease, color 0.2s var(--cubic-bezier);
     z-index: 2;
     text-align: center;
+    font-size: clamp(0.8rem, 0.678rem + 0.61vw, 1.4rem);
 }
 .navigationItem.active, .navigationItem.hovered {
     color: var(--light-text);
@@ -48,16 +50,4 @@
 
 .hideContent {
     display: none;
-}
-
-@media (min-width: 1200px) {
-    .navigationItem {
-        font-size: 1.2rem;
-    }
-}
-
-@media (min-width: 1920px) {
-    .navigationItem {
-        font-size: 1.4rem;
-    }
 }

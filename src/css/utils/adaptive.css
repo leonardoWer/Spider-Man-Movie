@@ -17,6 +17,13 @@
     .header-img-container {
         height: 80%;
     }
+
+    .half-container {
+        flex-direction: row;
+    }
+    .half-container__left, .half-container__right {
+        width: 50%;
+    }
 }
 
 
