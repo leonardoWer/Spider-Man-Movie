@@ -5,12 +5,13 @@
     padding: 8px;
     position: relative;
     overflow: hidden;
-    margin: 2.2rem 0;
+    margin: 2.2rem auto;
+    width: fit-content;
 }
 
 .navigationList {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.5rem;
 }
 
 .navigationItem {
@@ -21,6 +22,7 @@
     color: var(--vinous-dark);
     transition: background-color 0.8s ease, color 0.2s var(--cubic-bezier);
     z-index: 2;
+    text-align: center;
 }
 .navigationItem.active, .navigationItem.hovered {
     color: var(--light-text);
