@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import styles from './LogoAnimationText.module.css';
 
+const IMG_BASE_URL = "img/";
+
 export function LogoAnimationText() {
     const contentContainerElement = document.createElement('div');
     contentContainerElement.classList.add(styles.contentContainer);
@@ -17,19 +19,19 @@ export function LogoAnimationText() {
     imageContainer.id = 'image-container';
 
     const images = [
-        '/img/movies/s-m-1-1.png',
-        '/img/movies/sm-1-2.jpg',
-        '/img/movies/sm-1-3.jpg',
-        '/img/movies/sm-2-1.jpg',
-        '/img/movies/s-m-2-2.jpeg',
-        '/img/movies/s-m-3-1.png',
-        '/img/movies/s-m-3-2.png',
-        '/img/movies/sm-3-3.jpg',
+        'movies/s-m-1-1.png',
+        'movies/sm-1-2.jpg',
+        'movies/sm-1-3.jpg',
+        'movies/sm-2-1.jpg',
+        'movies/s-m-2-2.jpeg',
+        'movies/s-m-3-1.png',
+        'movies/s-m-3-2.png',
+        'movies/sm-3-3.jpg',
     ];
 
     images.forEach(src => {
         const img = document.createElement('img');
-        img.src = src;
+        img.src = IMG_BASE_URL + src;
         img.alt = 'logo-img';
         img.className = styles.image;
         img.style.opacity = 0; // Изначально невидимые
@@ -77,11 +79,11 @@ export function LogoAnimationText() {
     const animateImage = () => {
         gsap.to(imageContainer, {
             duration: animationDuration,
-            width: textElement.offsetHeight,
+            width: textElement.offsetHeight * 0.8,
             ease: "power2.inOut",
             onStart: () => {
                 imageContainer.style.display = 'block';
-                imageContainer.style.left = `${textElement.offsetWidth}px`; // Позиционируем картинку после "Н"
+                imageContainer.style.left = `${textElement.offsetWidth * 1.03}px`; // Позиционируем картинку после "Н"
                 gsap.to(imageElements[0], { opacity: 1, duration: 0 });
                 intervalId = setInterval(switchImage, imageSwitchInterval);
             },

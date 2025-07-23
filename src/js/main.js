@@ -7,6 +7,8 @@ import {createFilmsContent, createPersonsContent} from "s/components/NavigationT
 import {LogoAnimationText} from "s/components/LogoAnimationText/LogoAnimationText.js";
 import {createContactLink} from "s/components/Links/ContactLink/ContactLink.js";
 
+const IMG_BASE_URL = "img/";
+
 document.addEventListener("DOMContentLoaded", function () {
     // Верхнее меню
     const topMenuContainer = document.getElementById("top-menu-container");
@@ -25,10 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const contactsLinkData = [
-        { icon: 'tg', href: 'https://telegram.org/', hoverText: 'Visit my Telegram' },
-        { icon: 'vk', href: 'https://vk.com/', hoverText: 'Visit my VK' },
-        { icon: 'git', href: 'https://github.com/', hoverText: 'Visit my GitHub' },
-        { icon: 'p', href: '#', hoverText: 'Visit my portfolio' },
+        {icon: 'tg', href: 'https://telegram.org/', hoverText: 'Visit my Telegram'},
+        {icon: 'vk', href: 'https://vk.com/', hoverText: 'Visit my VK'},
+        {icon: 'git', href: 'https://github.com/', hoverText: 'Visit my GitHub'},
+        {icon: 'p', href: '#', hoverText: 'Visit my portfolio'},
     ]
     const footerContactsContainer = document.querySelector('.f-c-c__contacts-container');
     if (footerContactsContainer) {
@@ -45,19 +47,19 @@ document.addEventListener("DOMContentLoaded", function () {
             title: 'Человек-паук',
             description: 'Трилогия с Тоби Магуайером',
             titleBackgroundColor: "var(--red-3)",
-            hoverBackgroundImg: '/img/s-m-1.png'
+            hoverBackgroundImg: IMG_BASE_URL + 's-m-1.png'
         },
         {
             title: 'Новый Человек-паук',
             description: 'Два фильма с Эндрю Гарфилдом',
             titleBackgroundColor: "var(--red-2)",
-            hoverBackgroundImg: '/img/s-m-2.png'
+            hoverBackgroundImg: IMG_BASE_URL + 's-m-2.png'
         },
         {
             title: 'Человек-паук',
             description: 'Трилогия с Томом Холландом',
             titleBackgroundColor: "var(--red-1)",
-            hoverBackgroundImg: '/img/s-m-3.png'
+            hoverBackgroundImg: IMG_BASE_URL + 's-m-3.png'
         }
     ];
 
@@ -123,21 +125,21 @@ function getTabsMenuData() {
         {
             title: "Человек-Паук 2002",
             description: "Первая часть легендарной классики о дружелюбном соседе",
-            titleImg: "/img/s-m-1-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-1-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--red-blue-gradient)",
         },
         {
             title: "Человек-Паук 2 2004",
             description: "Вторая часть легендарной классики о дружелюбном соседе",
-            titleImg: "/img/s-m-1-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-1-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--red-blue-gradient)",
         },
         {
             title: "Человек-Паук 3 Враг в отражении",
             description: "Третья и последняя часть легендарной классики о дружелюбном соседе",
-            titleImg: "/img/s-m-1-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-1-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--red-blue-gradient)",
         }
@@ -146,13 +148,13 @@ function getTabsMenuData() {
         {
             name: "Тоби Магуайер",
             title: "Питер Паркер",
-            img: "/img/persons/tobey.jpg",
+            img: IMG_BASE_URL + "persons/tobey.jpg",
             personLink: "https://tobey.com/",
         },
         {
             name: "Кирстен Данст",
             title: "Мэри Джейн",
-            img: "/img/persons/kirsten.jpg",
+            img: IMG_BASE_URL + "persons/kirsten.jpg",
         }
     ];
     const navigationTabsMenuItems_SM1 = [
@@ -175,14 +177,14 @@ function getTabsMenuData() {
         {
             title: "Новый Человек-паук 2012",
             description: "Попытка Sony создать новую киновселенную",
-            titleImg: "/img/s-m-2-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-2-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--dark-red-gradient)",
         },
         {
             title: "Новый Человек-паук: Высокое напряжение 2014",
             description: "Продолжение душераздирающей дилогии про Питера Паркера",
-            titleImg: "/img/s-m-2-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-2-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--dark-red-gradient)",
         },
@@ -192,17 +194,17 @@ function getTabsMenuData() {
         {
             name: "Эндрю Гарфилд",
             title: "Питер Паркер",
-            img: "/img/persons/andrew.jpg",
+            img: IMG_BASE_URL + "persons/andrew.jpg",
         },
         {
             name: "Эмма Стоун",
             title: "Гвен Стейси",
-            img: "/img/persons/emma.jpg",
+            img: IMG_BASE_URL + "persons/emma.jpg",
         },
         {
             name: "Марк Уэбб",
             title: "Режиссёр",
-            img: "/img/persons/mark-uebb.png",
+            img: IMG_BASE_URL + "persons/mark-uebb.png",
         },
     ];
 
@@ -225,21 +227,21 @@ function getTabsMenuData() {
         {
             title: "Человек-паук: Возвращение домой",
             description: "Фильм про паука №3",
-            titleImg: "/img/s-m-3-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-3-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--light-red-gradient)",
         },
         {
             title: "Человек-паук: Вдали от дома",
             description: "Второй фильм с Томом Холландом",
-            titleImg: "/img/s-m-3-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-3-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--light-red-gradient)",
         },
         {
             title: "Человек-паук: Нет пути домой",
             description: "Третий фильм с Томом Холландом и мультивселенной",
-            titleImg: "/img/s-m-3-spider.png",
+            titleImg: IMG_BASE_URL + "s-m-3-spider.png",
             titleBackgroundColor: "var(--vinous-black)",
             hoverBackground: "var(--light-red-gradient)",
         },
@@ -249,17 +251,17 @@ function getTabsMenuData() {
         {
             name: "Том Холланд",
             title: "Питер Паркер",
-            img: "/img/persons/tom-holland.jpg",
+            img: IMG_BASE_URL + "persons/tom-holland.jpg",
         },
         {
             name: "Зендея",
             title: "ЭмДжей",
-            img: "/img/persons/zendaya.jpg",
+            img: IMG_BASE_URL + "persons/zendaya.jpg",
         },
         {
             name: "Джон Уоттс",
             title: "Режиссёр",
-            img: "/img/persons/jon-watts.jpg",
+            img: IMG_BASE_URL + "persons/jon-watts.jpg",
         },
     ];
 

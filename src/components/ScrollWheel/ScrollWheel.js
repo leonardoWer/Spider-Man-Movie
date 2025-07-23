@@ -163,7 +163,6 @@ export function ScrollWheel(parentContainer, scrollWheelNumber) {
         wheelElement = document.createElement('div');
         wheelElement.classList.add(styles.wheel);
         wheelElement.style.transform = `rotate(-${currentActivePointIndex * rotationStep}deg)`;
-        console.log("Степень прокрутки колеса", scrollWheelNumber, wheelElement.style.transform);
 
         // Create the circle wrapper
         const circleListWrapper = document.createElement('div');

@@ -29,7 +29,7 @@ export function TopMenu() {
                 <nav class="${styles['main-menu__inner']}">
                     <ul class="${styles['main-menu-inner__pages-list']}">
                       <li class="${styles['m-m-i-p-l__item']}">
-                          <a href="/" class="${styles['menu-link']}">home</a>
+                          <a href="#" class="${styles['menu-link']}">home</a>
                       </li>
                       <li class="${styles['m-m-i-p-l__item']}">
                           <a href="#s-m-1-section" class="${styles['menu-link']}" data-scroll-to="s-m-1-section">Spider-Man 1</a>
