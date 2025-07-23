@@ -1,3 +1,12 @@
+@media (max-width: 500px) {
+    .f-c-c__bottom-line {
+        flex-direction: column;
+    }
+    .f-c-c-b-l__website-by-container {
+        margin-top: 2rem;
+    }
+}
+
 @media (min-width: 500px) {
     .container-title {
         font-size: 3rem;
